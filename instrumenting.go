@@ -14,7 +14,6 @@ type instrumentingMiddleware struct {
 }
 
 func (mw instrumentingMiddleware) Providers() ([]Provider, error) {
-	fmt.Println("here")
 	begin := time.Now()
 	providers, err := mw.next.Providers()
 
