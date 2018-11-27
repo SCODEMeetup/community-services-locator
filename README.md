@@ -39,6 +39,9 @@ https://ckan.smartcolumbusos.com/dataset/food-pantry-and-user-data/resource/2a91
 such as hours of operation:
 https://ckan.smartcolumbusos.com/dataset/b0390b58-35c9-45e8-8a2d-d2472b20d65f/resource/ec2
 4773c-7cff-4589-9e2f-bcdeb5cdfd48/download/service_location.csv
+5. Agency.csv : This dataset presents information about list of agencies in Central Ohio and the types of services offered in those agencies.
+https://ckan.smartcolumbusos.com/dataset/food-pantry-and-user-data/resource/6425f64b-f162-4cd4-b271-5038b6752df5
+
 
 ## Questions
 Direct your questions to Tammy Chellis.
