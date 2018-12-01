@@ -8,17 +8,17 @@ import (
 	"github.com/go-kit/kit/endpoint"
 )
 
-func makeProviderEndpoint(svc FoodPantryService) endpoint.Endpoint {
+func makeTaxonomyEndpoint(svc TaxonomyService) endpoint.Endpoint {
 	return func(_ context.Context, request interface{}) (interface{}, error) {
-		v, err := svc.Providers()
+		v, err := svc.Taxonomy()
 		if err != nil {
-			return providerResponse{v, err.Error()}, nil
+			return taxonomyResponse{v, err.Error()}, nil
 		}
-		return providerResponse{v, ""}, nil
+		return taxonomyResponse{v, ""}, nil
 	}
 }
 
-func decodeProviderRequest(_ context.Context, r *http.Request) (interface{}, error) {
+func decodeTaxonomyRequest(_ context.Context, r *http.Request) (interface{}, error) {
 	return nil, nil
 }
 
@@ -26,10 +26,10 @@ func encodeResponse(_ context.Context, w http.ResponseWriter, response interface
 	return json.NewEncoder(w).Encode(response)
 }
 
-type providerRequest struct {
+type taxonomyRequest struct {
 }
 
-type providerResponse struct {
-	Providers []Provider `json:"providers"`
-	Err       string     `json:"err,omitempty"`
+type taxonomyResponse struct {
+	Records []Record `json:"records"`
+	Err     string   `json:"err,omitempty"`
 }
