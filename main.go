@@ -29,18 +29,18 @@ func main() {
 		Help:      "Total duration of requests in microseconds.",
 	}, fieldKeys)
 
-	var svc FoodPantryService
-	svc = foodPantryService{}
+	var svc TaxonomyService
+	svc = taxonomyService{}
 	svc = loggingMiddleware{logger, svc}
 	svc = instrumentingMiddleware{requestCount, requestLatency, svc}
 
-	providerHandler := httptransport.NewServer(
-		makeProviderEndpoint(svc),
-		decodeProviderRequest,
+	taxonomyHandler := httptransport.NewServer(
+		makeTaxonomyEndpoint(svc),
+		decodeTaxonomyRequest,
 		encodeResponse,
 	)
 
-	http.Handle("/providers", providerHandler)
+	http.Handle("/taxonomys", taxonomyHandler)
 	http.Handle("/metrics", promhttp.Handler())
 	logger.Log("msg", "HTTP", "addr", ":8080")
 	logger.Log("err", http.ListenAndServe(":8080", nil))

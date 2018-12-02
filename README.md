@@ -26,15 +26,12 @@ finished product via SCODE GitHub.
 ## Links to data:
 1. taxonomy.csv: This dataset explains the taxonomy codes applicable to different types of
 services
-https://ckan.smartcolumbusos.com/dataset/food-pantry-and-user-data/resource/371dd944-411c
--4851-a065-9f3f605ddfb9
+https://ckan.smartcolumbusos.com/dataset/food-pantry-and-user-data/resource/371dd944-411c-4851-a065-9f3f605ddfb9
 2. agency.csv: This dataset identifies the locations of agencies across Central Ohio region
-https://ckan.smartcolumbusos.com/dataset/food-pantry-and-user-data/resource/570a8e02-fb0e-
-4cee-895b-3b32bd740650
+https://ckan.smartcolumbusos.com/dataset/food-pantry-and-user-data/resource/570a8e02-fb0e-4cee-895b-3b32bd740650
 3. service_taxonomy.csv : This dataset presents the details about the taxonomy codes applicable
 to each agency. In other words, services offered at each agency are presented
-https://ckan.smartcolumbusos.com/dataset/food-pantry-and-user-data/resource/2a919af7-12d3-
-47a4-b86a-56692e2e1623
+https://ckan.smartcolumbusos.com/dataset/food-pantry-and-user-data/resource/2a919af7-12d3-47a4-b86a-56692e2e1623
 4. service_location.csv : This dataset contains additional information about the service locations,
 such as hours of operation:
 https://ckan.smartcolumbusos.com/dataset/b0390b58-35c9-45e8-8a2d-d2472b20d65f/resource/ec2

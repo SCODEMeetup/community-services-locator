@@ -8,15 +8,16 @@ import (
 
 type loggingMiddleware struct {
 	logger log.Logger
-	next   FoodPantryService
+	next   TaxonomyService
 }
 
-func (mw loggingMiddleware) Providers() ([]Provider, error) {
+func (mw loggingMiddleware) Taxonomy() ([]Record, error) {
 	begin := time.Now()
-	output, err := mw.next.Providers()
+	output, err := mw.next.Taxonomy()
+	_ = mw.logger.Log("Output %v", output)
 
 	_ = mw.logger.Log(
-		"method", "providers",
+		"method", "taxonomys",
 		"input", "",
 		"err", err,
 		"took", time.Since(begin),

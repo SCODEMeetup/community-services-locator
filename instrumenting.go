@@ -10,15 +10,15 @@ import (
 type instrumentingMiddleware struct {
 	requestCount   metrics.Counter
 	requestLatency metrics.Histogram
-	next           FoodPantryService
+	next           TaxonomyService
 }
 
-func (mw instrumentingMiddleware) Providers() ([]Provider, error) {
+func (mw instrumentingMiddleware) Taxonomy() ([]Record, error) {
 	begin := time.Now()
-	providers, err := mw.next.Providers()
+	taxonomy, err := mw.next.Taxonomy()
 
-	lvs := []string{"method", "providers", "error", fmt.Sprint(err != nil)}
+	lvs := []string{"method", "taxonomys", "error", fmt.Sprint(err != nil)}
 	mw.requestCount.With(lvs...).Add(1)
 	mw.requestLatency.With(lvs...).Observe(time.Since(begin).Seconds())
-	return providers, err
+	return taxonomy, err
 }
